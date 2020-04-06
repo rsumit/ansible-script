@@ -1,0 +1,14 @@
+- name: install k8s local setup
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: install kubectl
+      command: brew install kubectl
+    - name: install minikube
+      command: brew cask install minikube
+    - name: install xhyve
+      command: brew install docker-machine-driver-xhyve
+    - name: update ownership
+      command: sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+    - name: update permission
+      command: sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
